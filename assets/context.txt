@@ -1,0 +1,2 @@
+2. **Prepare your bio/context**
+    - Hardcode your startup info as a string in JavaScript, **or** (for bonus) host a `.txt` file and load it dynamically.
