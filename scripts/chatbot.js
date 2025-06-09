@@ -103,7 +103,7 @@ async function handleChat(question) {
   ]);
 
 
-    const answer = res.choices?.[0]?.message?.content;
+    const answer = res.choices?.content;
     if (answer) {
       addMessage(answer, 'bot');
     } else {

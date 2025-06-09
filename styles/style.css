@@ -1565,6 +1565,7 @@ a,
   padding: 0.75rem;
   border-radius: 8px;
   border: 1px solid #ccc;
+  font-family: var(--font-main);
 }
 
 .chat-input button {
@@ -1586,9 +1587,11 @@ a,
   border: none;
   border-radius: 20px;
   padding: 0.5rem 1rem;
+  font-family: var(--font-main);
   font-size: 0.85rem;
   cursor: pointer;
   transition: background 0.3s;
+  color: var(--body-text);
 }
 
 .sample-btn:hover {
