@@ -48,6 +48,11 @@ function addMessage(text, role) {
 
 // Handle sending a message
 async function handleChat(question) {
+  if (!puter || !puter.ai || typeof puter.ai.chat !== "function") {
+  console.error("Puter.ai.chat is not available!");
+  return;
+  }
+
   if (!question.trim()) {
     alert("Please enter a question.");
     return;
