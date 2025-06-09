@@ -8,7 +8,7 @@ const sampleBtns = document.querySelectorAll('.sample-btn');
 let context = '';
 
 // Load context.txt dynamically
-fetch('assets/context.txt')
+fetch('context.txt')
   .then(res => res.text())
   .then(data => {
     context = data;
