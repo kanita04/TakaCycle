@@ -48,9 +48,12 @@ function addMessage(text, role) {
 
 // Handle sending a message
 async function handleChat(question) {
+  console.log("🔍 Checking Puter:", puter);
+  console.log("🔍 Type of puter.ai.chat:", typeof puter?.ai?.chat);
+
   if (!puter || !puter.ai || typeof puter.ai.chat !== "function") {
-  console.error("Puter.ai.chat is not available!");
-  return;
+    console.error("❌ Puter.ai.chat is not available! Did you forget to load the Puter script?");
+    return;
   }
 
   if (!question.trim()) {
