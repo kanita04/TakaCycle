@@ -37,90 +37,89 @@ TakaCycle’s long-term vision is to expand across Africa, promoting tech-enable
 //     context = 'TakaCycle is a green startup in Nairobi focused on recycling.'; // fallback
 //   });
 
-document.addEventListener("DOMContentLoaded", async () => {
-    if (!puter?.ai?.chat) {
-      console.error("❌ Puter.ai.chat is not available. Did the script fail to load?");
-      return;
-    }
-
-    try {
-      const response = await puter.ai.chat({
-        messages: [
-          { role: "system", content: "You are a helpful assistant." },
-          { role: "user", content: "Hello, how are you?" }
-        ]
-      });
-
-      console.log("✅ Puter AI response:", response);
-      const answer = response.choices?.[0]?.message?.content;
-      if (answer) {
-        document.body.innerHTML += `<p><strong>AI says:</strong> ${answer}</p>`;
-      } else {
-        document.body.innerHTML += `<p><strong>AI returned nothing.</strong></p>`;
-      }
-    } catch (err) {
-      console.error("❌ Puter AI failed:", err);
-      document.body.innerHTML += `<p><strong>AI call failed.</strong></p>`;
-    }
-  });
-
-// // Add message to display
-// function addMessage(text, role) {
-//   const bubble = document.createElement('div');
-//   bubble.classList.add('chat-bubble', role);
-//   bubble.textContent = text;
-//   display.appendChild(bubble);
-//   display.scrollTop = display.scrollHeight;
-// }
-
-// // Handle sending a message
-// async function handleChat(question) {
-//   console.log("🔍 Checking Puter:", puter);
-//   console.log("🔍 Type of puter.ai.chat:", typeof puter?.ai?.chat);
-
-//   if (!puter || !puter.ai || typeof puter.ai.chat !== "function") {
-//     console.error("❌ Puter.ai.chat is not available! Did you forget to load the Puter script?");
-//     return;
-//   }
-
-//   if (!question.trim()) {
-//     alert("Please enter a question.");
-//     return;
-//   }
-
-//   addMessage(question, 'user');
-//   input.value = '';
-
-//   console.log("Sending messages:", [
-//   { role: 'system', content: context },
-//   { role: 'user', content: question }
-//   ]);
-
-//   try {
-//     const res = await puter.ai.chat({
-//       messages: [
-//         { role: 'system', content: context },
-//         { role: 'user', content: question }
-//       ]
-//     });
-
-//     const answer = res.choices?.[0]?.message?.content;
-//     if (answer) {
-//       addMessage(answer, 'bot');
-//     } else {
-//       addMessage("Hmm, I didn’t quite get that. Try again?", 'bot');
+// document.addEventListener("DOMContentLoaded", async () => {
+//     if (!puter?.ai?.chat) {
+//       console.error("❌ Puter.ai.chat is not available. Did the script fail to load?");
+//       return;
 //     }
-//   } catch (err) {
-//     console.error(err);
-//     addMessage("Oops! Something went wrong. Please try again later.", 'bot');
-//   }
-// }
 
-// // Event listeners
-// sendBtn.addEventListener('click', () => handleChat(input.value));
-// input.addEventListener('keydown', e => {
-//   if (e.key === 'Enter') handleChat(input.value);
-// });
-// sampleBtns.forEach(btn => {
-//   btn.addEventListener('click', () => handleChat(btn.textContent));
-// });
+//     try {
+//       const response = await puter.ai.chat({
+//         messages: [
+//           { role: "system", content: "You are a helpful assistant." },
+//           { role: "user", content: "Hello, how are you?" }
+//         ]
+//       });
+
+//       console.log("✅ Puter AI response:", response);
+//       const answer = response.choices?.[0]?.message?.content;
+//       if (answer) {
+//         document.body.innerHTML += `<p><strong>AI says:</strong> ${answer}</p>`;
+//       } else {
+//         document.body.innerHTML += `<p><strong>AI returned nothing.</strong></p>`;
+//       }
+//     } catch (err) {
+//       console.error("❌ Puter AI failed:", err);
+//       document.body.innerHTML += `<p><strong>AI call failed.</strong></p>`;
+//     }
+//   });
+
+// Add message to display
+function addMessage(text, role) {
+  const bubble = document.createElement('div');
+  bubble.classList.add('chat-bubble', role);
+  bubble.textContent = text;
+  display.appendChild(bubble);
+  display.scrollTop = display.scrollHeight;
+}
+
+// Handle sending a message
+async function handleChat(question) {
+  console.log("🔍 Checking Puter:", puter);
+  console.log("🔍 Type of puter.ai.chat:", typeof puter?.ai?.chat);
+
+  if (!puter || !puter.ai || typeof puter.ai.chat !== "function") {
+    console.error("❌ Puter.ai.chat is not available! Did you forget to load the Puter script?");
+    return;
+  }
+
+  if (!question.trim()) {
+    alert("Please enter a question.");
+    return;
+  }
+
+  addMessage(question, 'user');
+  input.value = '';
+
+  console.log("Sending messages:", [
+  { role: 'system', content: context },
+  { role: 'user', content: question }
+  ]);
+
+  try {
+  const res = await puter.ai.chat([
+    { role: 'system', content: context },
+    { role: 'user', content: question }
+  ]);
+
+
+    const answer = res.choices?.[0]?.message?.content;
+    if (answer) {
+      addMessage(answer, 'bot');
+    } else {
+      addMessage("Hmm, I didn’t quite get that. Try again?", 'bot');
+    }
+  } catch (err) {
+    console.error(err);
+    addMessage("Oops! Something went wrong. Please try again later.", 'bot');
+  }
+}
+
+// Event listeners
+sendBtn.addEventListener('click', () => handleChat(input.value));
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter') handleChat(input.value);
+});
+sampleBtns.forEach(btn => {
+  btn.addEventListener('click', () => handleChat(btn.textContent));
+});
