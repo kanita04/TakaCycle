@@ -1406,3 +1406,23 @@ a{
     gap: 2rem;
   }
 }
+
+.visit-count{
+    display: flex;
+    align-items: center;
+}
+
+.visit-count img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+#visit-count {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--body-text);
+  margin-top: 1rem;
+  text-align: center;
+  opacity: 0.8;
+}

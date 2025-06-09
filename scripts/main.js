@@ -96,6 +96,17 @@ document.getElementById("contact-form").addEventListener("submit", function(e) {
   document.getElementById("contact-form").reset();
 });
 
+// Visitor Counter using localStorage
+const visitDisplay = document.getElementById('visit-count');
+let visits = localStorage.getItem('visitCount');
 
+if (!visits) {
+  visits = 1;
+} else {
+  visits = parseInt(visits) + 1;
+}
+
+localStorage.setItem('visitCount', visits);
+visitDisplay.textContent = `Site Visits: ${visits}`;
 
 
