@@ -31,7 +31,7 @@ h2 {
     font-size: 1.75rem;
 }
 h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 p {
     margin-bottom: 1rem;
@@ -248,7 +248,7 @@ a{
 }
 
 /* Section Title */
-.about-header .mini-header {
+.about-header .about-mini-header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -392,3 +392,254 @@ a{
   }
 }
 
+/* Features section */
+.features {
+  padding: 4rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.features-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.features-mini-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.features-icon {
+  width: 24px;
+}
+
+.features-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.carousel-wrapper {
+  position: relative;
+}
+
+.features-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem 0;
+  scrollbar-width: none;  
+  -ms-overflow-style: none;   
+}
+
+.features-carousel::-webkit-scrollbar {
+  display: none; 
+}
+
+
+.feature-card {
+  flex: 0 0 95%;
+  background: var(--background);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  min-width: 280px;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-name{
+    font-size: 1rem;
+}
+
+.feature-desc{
+    font-size: 0.9rem;
+}
+
+.feature-quote{
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--body-text);
+}
+
+.feature-card img {
+  width: 80%;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  justify-content: center;
+}
+
+.tag {
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+
+.carousel-btn {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .feature-card {
+    flex: 0 0 30%;
+  }
+
+  .carousel-btn {
+    display: block;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .carousel-btn.left {
+    left: -1rem;
+  }
+
+  .carousel-btn.right {
+    right: -1rem;
+  }
+
+  .features-carousel {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) #e6f2ed;
+  }
+
+  .features-carousel::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .features-carousel::-webkit-scrollbar-track {
+    background: #e6f2ed;
+    border-radius: 10px;
+  }
+
+  .features-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
+    border: 2px solid #e6f2ed;
+  }
+}
+
+/* How it works section */
+.how-it-works {
+  padding: 4rem 1.5rem;
+  background-color: #f9fdfb;
+  text-align: center;
+}
+
+.how-header {
+  margin-bottom: 2rem;
+}
+
+.how-header .mini-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.how-icon {
+  width: 24px;
+  height: auto;
+}
+
+.how-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--main-text);
+}
+
+.how-header .highlight {
+  color: var(--primary);
+}
+
+/* Step Blocks */
+.step {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coins-animation {
+  transform: scale(0.85);         
+  max-height: 100px;             
+  overflow: hidden;               
+}
+
+.how-animation {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 1rem;
+}
+
+.step h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--main-text);
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  font-size: 0.95rem;
+  color: var(--body-text);
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .how-it-works {
+    text-align: center;
+  }
+
+  .how-it-works-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .step {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .how-animation {
+    width: 220px;
+    max-height: 180px;
+  }
+
+  .step h3 {
+    font-size: 1rem;
+  }
+
+  .step p {
+    font-size: 0.9rem;
+  }
+}

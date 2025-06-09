@@ -39,7 +39,7 @@
         <div class="about-grid">
             <div class="grid-1">
                 <div class="about-header">
-                <div class="mini-header">
+                <div class="about-mini-header">
                     <img src="assets/icons/aboutUs-section.png" alt="About Us Icon" class="about-us-icon">
                     <p>About Us</p>
                 </div>
@@ -94,50 +94,56 @@
     </section>
 
     <section class="features" id="features">
-        <div class="features-carousel">
             <div class="features-header">
-                <div class="mini-header">
+                <div class="features-mini-header">
                     <img src="assets/icons/features-section.png" alt="Features Icon" class="features-icon">
                     <p>Features</p>
                 </div>
                 <h2>Our <span class="highlight">Features</span></h2>
             </div>
-            <div class="feature-card">
-                <img src="assets/images/feature1.jpg" alt="TakaCycle App">
-                <h3>TakaCycle App</h3>
-                <p>A gamified app that tracks recyclables and rewards users</p>
-                <p>“Helps users recycle consistently by rewarding 
-                    every action”</p>
-                <div class="tags">
-                    <span class="tag">EcoPoints Tracker</span>
-                    <span class="tag">Barcode Scanning</span>
-                    <span class="tag">Smart Bin Check-ins</span>
+            <div class="carousel-wrapper">
+                <button class="carousel-btn left">&#8249;</button>
+                <div class="features-carousel">
+                    <div class="feature-card">
+                        <img src="assets/images/feature1.jpg" alt="TakaCycle App">
+                        <h3 class="feature-name">TakaCycle App</h3>
+                        <p class="feature-desc">A gamified app that tracks recyclables and rewards users</p>
+                        <p class="feature-quote">“Helps users recycle consistently by rewarding 
+                            every action”</p>
+                        <div class="tags">
+                            <span class="tag">EcoPoints Tracker</span>
+                            <span class="tag">Barcode Scanning</span>
+                            <span class="tag">Smart Bin Check-ins</span>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/images/feature2.jpg" alt="Smart Drop-Off Bins">
+                        <h3 class="feature-name">Smart Drop-Off Bins</h3>
+                        <p class="feature-desc">Intelligent Bins that verify and log recycling activity</p>
+                        <p class="feature-quote">“Improves accuracy of recycling and builds user 
+                            trust in the system”</p>
+                        <div class="tags">
+                            <span class="tag">Verified Smart Sorting</span>
+                            <span class="tag">QR code scanner</span>
+                            <span class="tag">Weight Sensor</span>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/images/feature3.jpg" alt="TakaRewards MarketPlace">
+                        <h3 class="feature-name">TakaRewards MarketPlace</h3>
+                        <p class="feature-desc">A local network for redeeming EcoPoints</p>
+                        <p class="feature-quote">“Strengthens local businesses and encourages 
+                            eco-conscious lifestyles”</p>
+                        <div class="tags">
+                            <span class="tag">Local Rewards Hub</span>
+                            <span class="tag">Geolocation Filters</span>
+                            <span class="tag">Digital Wallet</span>
+                        </div>
+                    </div>                    
                 </div>
+                <button class="carousel-btn right">&#8250;</button>
             </div>
-            <div class="feature-card">
-                <img src="assets/images/feature2.jpg" alt="Smart Drop-Off Bins">
-                <h3>Smart Drop-Off Bins</h3>
-                <p>Intelligent Bins that verify and log recycling activity</p>
-                <p>“Improves accuracy of recycling and builds user 
-                    trust in the system”</p>
-                <div class="tags">
-                    <span class="tag">Verified Smart Sorting</span>
-                    <span class="tag">QR code scanner</span>
-                    <span class="tag">Weight Sensor</span>
-                </div>
-            </div>
-            <div class="feature-card">
-                <img src="assets/images/feature3.jpg" alt="TakaRewards MarketPlace">
-                <h3>TakaRewards MarketPlace</h3>
-                <p>A local network for redeeming EcoPoints</p>
-                <p>“Strengthens local businesses and encourages 
-                    eco-conscious lifestyles”</p>
-                <div class="tags">
-                    <span class="tag">Local Rewards Hub</span>
-                    <span class="tag">Geolocation Filters</span>
-                    <span class="tag">Digital Wallet</span>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -149,20 +155,22 @@
                 </div>
             <h2>How <span class="highlight">TakaCycle</span> Works</h2>
         </div>
-        <div class="step">
-            <lottie-player src="animations/recycle-bin-animation.json" class="how-animation" loop autoplay></lottie-player>
-            <h3>1. Recycle Smart</h3>
-            <p>Drop your recyclables at a nearby TakaCycle bin and scan using the app to log your activity</p>
-        </div>
-        <div class="step">
-            <lottie-player src="animations/coins-animation.json" class="how-animation" loop autoplay></lottie-player>
-            <h3>2. Earn EcoPoints</h3>
-            <p>Track your drop-offs and earn EcoPoints in your app profile every time you recycle.</p>
-        </div>
-        <div class="step">
-            <lottie-player src="animations/rewards-animation.json" class="how-animation" loop autoplay></lottie-player>
-            <h3>3. Get Rewards</h3>
-            <p>Redeem your EcoPoints for discounts and goodies at participating local businesses.</p>
+        <div class="how-it-works-steps">
+            <div class="step">
+                <lottie-player src="animations/recycle-bin-animation.json" class="how-animation" loop autoplay></lottie-player>
+                <h3>1. Recycle Smart</h3>
+                <p>Drop your recyclables at a nearby TakaCycle bin and scan using the app to log your activity</p>
+            </div>
+            <div class="step">
+                <lottie-player src="animations/coins-animation.json" class="how-animation coins-animation" loop autoplay></lottie-player>
+                <h3>2. Earn EcoPoints</h3>
+                <p>Track your drop-offs and earn EcoPoints in your app profile every time you recycle.</p>
+            </div>
+            <div class="step">
+                <lottie-player src="animations/rewards-animation.json" class="how-animation" loop autoplay></lottie-player>
+                <h3>3. Get Rewards</h3>
+                <p>Redeem your EcoPoints for discounts and goodies at participating local businesses.</p>
+            </div>
         </div>
     </section>
 
