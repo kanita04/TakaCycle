@@ -1,2 +1,18 @@
-2. **Prepare your bio/context**
-    - Hardcode your startup info as a string in JavaScript, **or** (for bonus) host a `.txt` file and load it dynamically.
+TakaCycle is a Nairobi-based green tech startup founded by Zawadi Mwenda, an urban planner passionate about sustainability and community impact. 
+
+The startup began in response to the growing waste management crisis in urban Kenyan communities. Inspired by global models in countries like Germany and South Korea, TakaCycle introduces a gamified recycling system rooted in community empowerment.
+
+Our mission is to transform waste disposal into a rewarding, tech-driven experience. We provide a mobile app that allows users to track recyclable drop-offs, earn EcoPoints, and redeem them for discounts and deals at local businesses. The app uses smart bins equipped with QR scanners and weight sensors to verify drop-offs.
+
+TakaCycle offers:
+- A user-friendly mobile app to log recycling activity
+- Verified smart drop-off bins across neighborhoods
+- A TakaRewards marketplace for redeeming EcoPoints
+- A local business partnership program
+- A chatbot (TakaBot) that helps users engage with the platform
+
+Our founder Zawadi Mwenda leads a passionate team including Kelvin Otieno (Lead Developer) and Anita Kamau (Product Designer), all committed to creating cleaner cities and empowered communities.
+
+You can support TakaCycle by using the app, recycling at designated points, becoming a marketplace partner, or contacting the team via the website.
+
+TakaCycle’s long-term vision is to expand across Africa, promoting tech-enabled recycling and empowering communities through sustainable innovation.
