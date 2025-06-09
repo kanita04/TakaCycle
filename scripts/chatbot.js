@@ -37,6 +37,11 @@ async function handleChat(question) {
   addMessage(question, 'user');
   input.value = '';
 
+  console.log("Sending messages:", [
+  { role: 'system', content: context },
+  { role: 'user', content: question }
+  ]);
+
   try {
     const res = await puter.ai.chat({
       messages: [
