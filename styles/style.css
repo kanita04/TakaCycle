@@ -88,19 +88,6 @@ a{
     display: none;
 }
 
-/* #nav-links.open {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: absolute;
-    top: 70px;
-    left: 1rem;
-    right: 1rem;
-    background-color: var(--background);
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-} */
-
 #nav-links ul {
     list-style: none;
     padding: 0;
@@ -147,15 +134,20 @@ a{
   }
 
   #nav-links {
-    display: flex !important;
-    position: static !important;
-    flex-direction: row !important;
+    display: flex;
+    position: static;
+    flex-direction: row;
     gap: 2rem;
     align-items: center;
   }
 
   .cta-button {
     display: inline-block;
+  }
+
+  #nav-links ul{
+    display: flex;
+    gap: 1rem;
   }
 }
 
@@ -206,6 +198,7 @@ a{
 
 .hero-bg {
   position: absolute;
+  inset: 0;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
@@ -227,6 +220,23 @@ a{
 .hero-content {
   position: relative;
   z-index: 1;
+}
+
+@media (min-width: 725px) {
+  .hero-bg{
+    background-position: center 20%;
+  }
+  .hero-content {
+    padding: 3rem 6rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
 }
 
 /* About section */
@@ -314,39 +324,42 @@ a{
 .infographic {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 1.5rem 0;
+  justify-content: center;
   align-items: center;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
+  margin: 1.5rem auto;
+  max-width: 100%;
 }
 
 .step-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.2rem;
+  flex: 1;
 }
 
 .step {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 0.65rem;
   text-align: center;
-  font-size: 0.75rem;
 }
 
 .step-icon {
-  width: 28px; 
+  width: 28px;
   height: auto;
-  margin-bottom: 0.4rem;
 }
 
 .divider {
-  width: 50px;
   height: 1px;
+  width: 40px;
   background-color: #ccc;
   opacity: 1;
 }
+
 
 /* Description Text */
 .about-description {
@@ -977,7 +990,7 @@ a{
 
 .chatbot {
   padding: 4rem 1.5rem;
-  background-color: #f4fcf8;
+  background-color: #fff;
   text-align: center;
 }
 
@@ -1407,6 +1420,8 @@ a{
   }
 }
 
+/* Visit count */
+
 .visit-count{
     display: flex;
     align-items: center;
@@ -1425,4 +1440,76 @@ a{
   margin-top: 1rem;
   text-align: center;
   opacity: 0.8;
+}
+
+/* Hover effects for buttons and links*/
+#nav-links a {
+  color: var(--main-text);
+  transition: color 0.3s;
+}
+
+#nav-links a:hover {
+  color: var(--primary);
+}
+.btn,
+.cta-button,
+.submit-btn {
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover,
+.cta-button:hover,
+.submit-btn:hover {
+  background-color: #157a5b; 
+  transform: scale(1.03);
+}
+.feature-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.testimonial-card {
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.testimonial-card:hover {
+  background-color: #f0fef9;
+  transform: scale(1.02);
+}
+.team-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.team-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+.footer-links a {
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+button,
+a,
+.faq-question {
+  cursor: pointer;
+}
+
+
+/* Hover effect */
+.audience-toggle .toggle-btn:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Active button styling */
+.audience-toggle .toggle-btn.active {
+  background-color: var(--primary);
+  color: white;
 }

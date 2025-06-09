@@ -1,9 +1,19 @@
 // Mobile menu toggle
 const menuBtn = document.querySelector('.menu');
 const navLinks = document.getElementById('nav-links');
+const navItems = navLinks.querySelectorAll('a');
 
 menuBtn.addEventListener('click', () => {
   navLinks.classList.toggle('open');
+});
+
+// Auto-close menu on link click (for mobile)
+navItems.forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth < 768) {
+      navLinks.classList.remove('open');
+    }
+  });
 });
 
 window.addEventListener('resize', () => {
