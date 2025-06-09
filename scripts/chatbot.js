@@ -5,64 +5,40 @@ const display = document.getElementById('chat-display');
 const sampleBtns = document.querySelectorAll('.sample-btn');
 
 // Global context variable
-const context = `
-TakaCycle is a Nairobi-based green tech startup founded by Zawadi Mwenda, an urban planner passionate about sustainability and community impact.
+let context = "";
 
-The startup began in response to the growing waste management crisis in urban Kenyan communities. Inspired by global models in countries like Germany and South Korea, TakaCycle introduces a gamified recycling system rooted in community empowerment.
+fetch('context.txt')
+  .then(res => {
+    if (!res.ok) throw new Error("Failed to load context.txt");
+    return res.text();
+  })
+  .then(data => {
+    context = data;
+    console.log("📄 Context loaded:", context.substring(0, 100) + "...");
 
-Our mission is to transform waste disposal into a rewarding, tech-driven experience. We provide a mobile app that allows users to track recyclable drop-offs, earn EcoPoints, and redeem them for discounts and deals at local businesses. The app uses smart bins equipped with QR scanners and weight sensors to verify drop-offs.
+    // Event listeners
+    sendBtn.addEventListener('click', () => handleChat(input.value));
+    input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') handleChat(input.value);
+    });
+    sampleBtns.forEach(btn => {
+    btn.addEventListener('click', () => handleChat(btn.textContent));
+    });
 
-TakaCycle offers:
-- A user-friendly mobile app to log recycling activity
-- Verified smart drop-off bins across neighborhoods
-- A TakaRewards marketplace for redeeming EcoPoints
-- A local business partnership program
-- A chatbot (TakaBot) that helps users engage with the platform
+  })
+  .catch(err => {
+    console.error("❌ Could not load context:", err);
+    context = "TakaCycle is a green startup based in Nairobi focused on recycling.";
 
-Our founder Zawadi Mwenda leads a passionate team including Kelvin Otieno (Lead Developer) and Anita Kamau (Product Designer), all committed to creating cleaner cities and empowered communities.
-
-You can support TakaCycle by using the app, recycling at designated points, becoming a marketplace partner, or contacting the team via the website.
-
-TakaCycle’s long-term vision is to expand across Africa, promoting tech-enabled recycling and empowering communities through sustainable innovation.
-`;
-
-// Load context.txt dynamically
-// fetch('context.txt')
-//   .then(res => res.text())
-//   .then(data => {
-//     context = data;
-//   })
-//   .catch(err => {
-//     console.error('Failed to load context.txt:', err);
-//     context = 'TakaCycle is a green startup in Nairobi focused on recycling.'; // fallback
-//   });
-
-// document.addEventListener("DOMContentLoaded", async () => {
-//     if (!puter?.ai?.chat) {
-//       console.error("❌ Puter.ai.chat is not available. Did the script fail to load?");
-//       return;
-//     }
-
-//     try {
-//       const response = await puter.ai.chat({
-//         messages: [
-//           { role: "system", content: "You are a helpful assistant." },
-//           { role: "user", content: "Hello, how are you?" }
-//         ]
-//       });
-
-//       console.log("✅ Puter AI response:", response);
-//       const answer = response.choices?.[0]?.message?.content;
-//       if (answer) {
-//         document.body.innerHTML += `<p><strong>AI says:</strong> ${answer}</p>`;
-//       } else {
-//         document.body.innerHTML += `<p><strong>AI returned nothing.</strong></p>`;
-//       }
-//     } catch (err) {
-//       console.error("❌ Puter AI failed:", err);
-//       document.body.innerHTML += `<p><strong>AI call failed.</strong></p>`;
-//     }
-//   });
+    // Event listeners
+    sendBtn.addEventListener('click', () => handleChat(input.value));
+    input.addEventListener('keydown', e => {
+    if (e.key === 'Enter') handleChat(input.value);
+    });
+    sampleBtns.forEach(btn => {
+    btn.addEventListener('click', () => handleChat(btn.textContent));
+    });
+  });
 
 // Add message to display
 function addMessage(text, role) {
@@ -98,8 +74,8 @@ async function handleChat(question) {
 
   try {
   const res = await puter.ai.chat([
-    { role: 'system', content: context },
-    { role: 'user', content: question }
+    { role: "system", content: context },
+    { role: "user", content: question }
   ]);
 
 
@@ -115,11 +91,4 @@ async function handleChat(question) {
   }
 }
 
-// Event listeners
-sendBtn.addEventListener('click', () => handleChat(input.value));
-input.addEventListener('keydown', e => {
-  if (e.key === 'Enter') handleChat(input.value);
-});
-sampleBtns.forEach(btn => {
-  btn.addEventListener('click', () => handleChat(btn.textContent));
-});
+
