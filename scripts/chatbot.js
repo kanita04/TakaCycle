@@ -1,18 +1,33 @@
-const context = `
-TakaCycle is a Nairobi-based green tech startup founded by Zawadi Mwenda, an urban planner passionate about recycling and community impact. 
-TakaCycle helps residents recycle smarter using a mobile app, EcoPoints rewards system, and smart drop-off bins.
-Users track recyclables, earn points, and redeem them for discounts at local businesses.
-TakaCycle’s mission is to reduce waste, empower communities, and create a cleaner future.
-You can support TakaCycle by using the app, joining the marketplace, or reaching out via our contact form.
-`;
-
 // Elements
 const input = document.getElementById('chat-input');
 const sendBtn = document.getElementById('chat-send');
 const display = document.getElementById('chat-display');
 const sampleBtns = document.querySelectorAll('.sample-btn');
 
-// Chat handler
+// Global context variable
+let context = '';
+
+// Load context.txt dynamically
+fetch('/assets/context.txt')
+  .then(res => res.text())
+  .then(data => {
+    context = data;
+  })
+  .catch(err => {
+    console.error('Failed to load context.txt:', err);
+    context = 'TakaCycle is a green startup in Nairobi focused on recycling.'; // fallback
+  });
+
+// Add message to display
+function addMessage(text, role) {
+  const bubble = document.createElement('div');
+  bubble.classList.add('chat-bubble', role);
+  bubble.textContent = text;
+  display.appendChild(bubble);
+  display.scrollTop = display.scrollHeight;
+}
+
+// Handle sending a message
 async function handleChat(question) {
   if (!question.trim()) {
     alert("Please enter a question.");
@@ -20,36 +35,33 @@ async function handleChat(question) {
   }
 
   addMessage(question, 'user');
+  input.value = '';
 
   try {
     const res = await puter.ai.chat({
       messages: [
-        { role: "system", content: context },
-        { role: "user", content: question }
+        { role: 'system', content: context },
+        { role: 'user', content: question }
       ]
     });
-    addMessage(res.choices[0].message.content, 'bot');
+
+    const answer = res.choices?.[0]?.message?.content;
+    if (answer) {
+      addMessage(answer, 'bot');
+    } else {
+      addMessage("Hmm, I didn’t quite get that. Try again?", 'bot');
+    }
   } catch (err) {
-    addMessage("Oops! Something went wrong. Try again later.", 'bot');
+    console.error(err);
+    addMessage("Oops! Something went wrong. Please try again later.", 'bot');
   }
-
-  input.value = '';
-}
-
-// Add message to chat display
-function addMessage(msg, type) {
-  const bubble = document.createElement('div');
-  bubble.className = `chat-bubble ${type}`;
-  bubble.textContent = msg;
-  display.appendChild(bubble);
-  display.scrollTop = display.scrollHeight;
 }
 
 // Event listeners
 sendBtn.addEventListener('click', () => handleChat(input.value));
-input.addEventListener('keypress', e => {
+input.addEventListener('keydown', e => {
   if (e.key === 'Enter') handleChat(input.value);
 });
-sampleBtns.forEach(btn =>
-  btn.addEventListener('click', () => handleChat(btn.textContent))
-);
+sampleBtns.forEach(btn => {
+  btn.addEventListener('click', () => handleChat(btn.textContent));
+});

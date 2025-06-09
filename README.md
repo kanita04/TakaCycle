@@ -6,7 +6,7 @@ TakaCycle is a community-based recycling rewards platform that encourages eco-co
 
 ## 🌐 Live Demo
 
-[Visit the TakaCycle Site](#) <!-- Replace with actual link if hosted -->
+[https://kanita04.github.io/TakaCycle/](#)
 
 ---
 
@@ -16,16 +16,43 @@ TakaCycle is a community-based recycling rewards platform that encourages eco-co
 - Carousel for product features
 - Testimonials with toggle switch for user groups
 - FAQ accordion
-- Interactive chatbot mockup
+- Interactive **AI-powered chatbot** using [Puter.js](https://puter.com/)
+- Chatbot context loaded dynamically from `context.txt`
+- Sample question buttons for guided interaction
 - Visitor counter using `localStorage`
 - Smooth scrolling navigation
 - Contact form with validation
 
 ---
 
+## 🤖 Chatbot Sample Questions
+
+Here are five example questions you can ask the chatbot (TakaBot):
+
+- Who founded TakaCycle?
+- What problems does TakaCycle solve?
+- How can I earn EcoPoints?
+- How can I support your team?
+- What’s TakaCycle’s mission?
+
+> 💬 “Ask our AI about our story, services, or how you can get involved.”
+
+---
+
 ## 📁 Project Structure
 
-
+TakaCycle/
+├── index.html # Main homepage
+├── assets/
+│ ├── context.txt # Startup bio loaded dynamically by chatbot
+│ ├── images/ # All image assets
+│ └── icons/ # Icons like chatbot-send.png
+├── css/
+│ └── style.css # Main stylesheet
+├── scripts/
+│ └── main.js # Contains interactivity logic for website
+│ └── chatbot.js #JavaScript logic for TakaBot
+└── README.md # Project documentation
 
 ---
 
@@ -33,7 +60,7 @@ TakaCycle is a community-based recycling rewards platform that encourages eco-co
 
 1. Clone or download the repository.
 2. Open `index.html` in your browser.
-3. For full functionality (e.g. chatbot animations), ensure you have a local server or host it online.
+3. For full functionality (e.g., chatbot using `puter.ai.chat()`), **host the site online** (e.g., GitHub Pages).
 
 ---
 
@@ -48,4 +75,3 @@ TakaCycle is a community-based recycling rewards platform that encourages eco-co
 ## 🧑‍💻 Author
 
 Built with ❤️ by Anita Kamau
-
