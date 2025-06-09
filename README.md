@@ -6,7 +6,13 @@ TakaCycle is a community-based recycling rewards platform that encourages eco-co
 
 ## 🌐 Live Demo
 
-[https://kanita04.github.io/TakaCycle/](#)
+[View the Website](https://kanita04.github.io/TakaCycle/)
+
+---
+
+## 🎨 Figma Design
+
+[View the TakaCycle UI in Figma](https://www.figma.com/design/9Zg0oSYJbA6ROJLu00aytb/TakaCycle-design?node-id=0-1&t=iUic3YikINzrM4z4-1)
 
 ---
 
@@ -41,6 +47,7 @@ Here are five example questions you can ask the chatbot (TakaBot):
 
 ## 📁 Project Structure
 
+```
 TakaCycle/
 ├── index.html # Main homepage
 ├── assets/
@@ -53,7 +60,7 @@ TakaCycle/
 │ └── main.js # Contains interactivity logic for website
 │ └── chatbot.js #JavaScript logic for TakaBot
 └── README.md # Project documentation
-
+```
 ---
 
 ## 🛠️ How to Use
