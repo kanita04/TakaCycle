@@ -953,6 +953,7 @@ a{
   font-size: 1rem;
   position: relative;
   color: var(--main-text);
+  font-family: var(--font-main);
 }
 
 .faq-question:hover {
@@ -984,6 +985,7 @@ a{
   font-size: 0.8rem;
   color: var(--body-text);
   display: none;
+  font-family: var(--font-main);
 }
 
 .faq-answer.show {
@@ -1541,6 +1543,7 @@ a,
   max-width: 80%;
   font-size: 0.9rem;
   line-height: 1.4;
+  text-align: left;
 }
 
 .chat-bubble.bot {
