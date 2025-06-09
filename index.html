@@ -311,26 +311,36 @@
     <section class="chatbot" id="chatbot">
         <div class="chatbot-header">
             <div class="chatbot-mini-header">
-                <img src="assets/icons/chatbot-section.png" alt="Chatbot Icon" class="chatbot-icon">
-                <p>Chatbot</p>
+            <img src="assets/icons/chatbot-section.png" alt="Chatbot Icon" class="chatbot-icon">
+            <p>Chatbot</p>
             </div>
             <h2>Ask <span class="highlight">TakaBot</span></h2>
         </div>
 
+        <p class="chat-instruction">Ask our AI about our story, services, or how you can get involved.</p>
+
         <div class="chat-window">
-            <div class="chat-bubble bot">
-                <img src="assets/icons/chatbot-profile-img.png" alt="Chatbot Profile">
-                <p>Hi there! Want to find a TakaCycle drop-off point near you?</p>
+            <div id="chat-display" class="chat-display">
+                <div class="chat-bubble bot">Hi there! Want to find a TakaCycle drop-off point near you?</div>
             </div>
+
             <div class="chat-input">
-                <input type="text" placeholder="Ask me anything about recycling...">
-                <button class="send-btn" aria-label="Send message">
-                    <img src="assets/icons/chatbot-send.png" alt="Send Button">
+                <input type="text" id="chat-input" placeholder="Ask me anything about recycling..." />
+                <button id="chat-send" aria-label="Send message">
+                    <img src="assets/icons/chatbot-send.png" alt="Send">
                 </button>
             </div>
-            <p class="powered-by">Powered by AI</p>
+
+            <div class="sample-questions">
+                <button class="sample-btn">Who founded TakaCycle?</button>
+                <button class="sample-btn">What problems does TakaCycle solve?</button>
+                <button class="sample-btn">How can I earn EcoPoints?</button>
+                <button class="sample-btn">How can I support your team?</button>
+                <button class="sample-btn">What’s TakaCycle’s mission?</button>
+            </div>
         </div>
     </section>
+
 
     <section class="brand-voice">
         <img src="assets/icons/brand-voice.png" alt="Recycling Icon" class="brand-voice-icon">
@@ -419,6 +429,8 @@
     </footer>
 
     <script src="scripts/main.js"></script>
+    <script src="https://js.puter.com/v2/"></script>
+    <script src="scripts/chatbot.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 </html>

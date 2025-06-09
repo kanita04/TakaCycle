@@ -1513,3 +1513,82 @@ a,
   background-color: var(--primary);
   color: white;
 }
+
+/* updated chatbot ui */
+.chat-window {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+.chat-display {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chat-bubble {
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  max-width: 80%;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.chat-bubble.bot {
+  background-color: #4c9b82;
+  color: white;
+  align-self: flex-start;
+}
+
+.chat-bubble.user {
+  background-color: #f2f2f2;
+  align-self: flex-end;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.chat-input button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sample-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.sample-btn {
+  background-color: #eaf5f1;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sample-btn:hover {
+  background-color: #c3e6d8;
+}

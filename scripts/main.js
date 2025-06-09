@@ -118,5 +118,3 @@ if (!visits) {
 
 localStorage.setItem('visitCount', visits);
 visitDisplay.textContent = `Site Visits: ${visits}`;
-
-
